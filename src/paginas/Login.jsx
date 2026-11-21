@@ -1,9 +1,9 @@
+
 import { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
-
     const navigate = useNavigate();
 
     const [email, setEmail] = useState('');
@@ -11,7 +11,6 @@ function Login() {
     const [cargando, setCargando] = useState(false);
 
     const iniciarSesion = async (e) => {
-
         e.preventDefault();
 
         if (!email || !password) {
@@ -22,7 +21,6 @@ function Login() {
         setCargando(true);
 
         try {
-
             const respuesta = await axios.post(
                 'http://localhost:3000/api/usuarios/login',
                 {
@@ -44,28 +42,20 @@ function Login() {
             navigate('/dashboard');
 
         } catch (error) {
-
-            if (error.response?.status === 401 ||
-                error.response?.status === 404) {
-
+            if (
+                error.response?.status === 401 ||
+                error.response?.status === 404
+            ) {
                 alert('Email o contraseña incorrectos.');
-
             } else {
-
                 alert('Error al conectar con el servidor.');
-
             }
-
         } finally {
-
             setCargando(false);
-
         }
-
     };
 
     return (
-
         <div
             style={{
                 backgroundColor: '#121212',
@@ -75,7 +65,6 @@ function Login() {
                 alignItems: 'center'
             }}
         >
-
             <div
                 style={{
                     width: '400px',
@@ -86,9 +75,26 @@ function Login() {
                     boxShadow: '0 0 25px rgba(212,175,55,0.15)'
                 }}
             >
+                {/* BOTÓN PARA REGRESAR A LA HOME */}
+                <Link
+                    to="/"
+                    style={{
+                        display: 'inline-block',
+                        color: '#d4af37',
+                        textDecoration: 'none',
+                        fontSize: '14px',
+                        fontWeight: 'bold',
+                        padding: '10px 15px',
+                        marginBottom: '20px',
+                        border: '1px solid #d4af37',
+                        borderRadius: '8px',
+                        cursor: 'pointer'
+                    }}
+                >
+                    ← Volver al inicio
+                </Link>
 
                 <div className="text-center mb-4">
-
                     <div
                         style={{
                             width: '90px',
@@ -127,11 +133,9 @@ function Login() {
                     >
                         Premium Barber Studio
                     </p>
-
                 </div>
 
                 <form onSubmit={iniciarSesion}>
-
                     <input
                         type="email"
                         placeholder="Email"
@@ -167,15 +171,10 @@ function Login() {
                                 : 'Iniciar Sesión'
                         }
                     </button>
-
                 </form>
-
             </div>
-
         </div>
-
     );
-
 }
 
 const inputStyle = {
