@@ -1,3 +1,4 @@
+
 import { Navigate } from 'react-router-dom';
 
 function ProtectedRoute({ children }) {
@@ -6,8 +7,7 @@ function ProtectedRoute({ children }) {
 
     // SI NO HAY TOKEN
     if (!token) {
-
-        return <Navigate to="/" />;
+        return <Navigate to="/login" replace />;
     }
 
     // SI HAY TOKEN

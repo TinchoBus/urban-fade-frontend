@@ -103,7 +103,7 @@ const generarFranja = (
 
     for (
         let minuto = inicio;
-        minuto <= fin;
+        minuto < fin;
         minuto += intervalo
     ) {
         horarios.push(
@@ -359,22 +359,8 @@ function TurnosTable() {
             ...horariosTarde
         ];
 
-        // Si estamos editando y el horario actual
-        // todavía pertenece al turno, lo conservamos
-        // visible aunque la configuración haya cambiado.
-        if (
-            modoEdicion &&
-            hora &&
-            !horarios.includes(
-                hora.slice(0, 5)
-            )
-        ) {
-            horarios.push(
-                hora.slice(0, 5)
-            );
-
-            horarios.sort();
-        }
+        // Solo mostramos horarios que siguen siendo
+        // válidos según la configuración actual del negocio.
 
         // Para turnos nuevos de hoy,
         // ocultamos horarios que ya pasaron.
@@ -406,8 +392,7 @@ function TurnosTable() {
         fecha,
         horarioDelDia,
         configuracion,
-        modoEdicion,
-        hora
+        modoEdicion
     ]);
 
     // GET TURNOS

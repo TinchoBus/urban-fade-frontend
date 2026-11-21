@@ -1,0 +1,70 @@
+/* Urban Fade: diseño original conservado + íconos de contacto */
+.uf-landing { background:#101010; color:#f5f1e8; min-height:100vh; font-family:Arial,Helvetica,sans-serif; }
+.uf-landing * { box-sizing:border-box; }
+.uf-landing__nav { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:12px clamp(20px,6vw,100px); border-bottom:1px solid #30291b; background:#101010; }
+.uf-landing__brand { display:block; flex-shrink:0; }
+.uf-landing__brand img { display:block; width:185px; height:90px; object-fit:contain; }
+.uf-landing__nav nav { display:flex; flex-wrap:wrap; align-items:center; gap:22px; }
+.uf-landing__nav nav a { color:#f5f1e8; text-decoration:none; font-size:14px; }
+.uf-landing__nav nav a:hover { color:#d4af37; }
+.uf-landing__nav nav .uf-landing__login { border:1px solid #d4af37; padding:11px 18px; border-radius:5px; }
+.uf-landing__hero { position:relative; isolation:isolate; overflow:hidden; min-height:75vh; display:flex; align-items:center; padding:80px clamp(20px,8vw,140px); background:#16120e; }
+.uf-landing__hero-photo { position:absolute; z-index:-2; right:0; top:0; width:63%; height:100%; object-fit:cover; object-position:center 38%; }
+.uf-landing__hero::before { content:''; position:absolute; z-index:-1; inset:0; background:linear-gradient(90deg,#101010 0%,rgba(16,16,16,.97) 28%,rgba(16,16,16,.72) 51%,rgba(16,16,16,.05) 100%); }
+.uf-landing__hero-content { max-width:760px; }
+.uf-landing__eyebrow { font-size:12px; font-weight:700; letter-spacing:3px; color:#d4af37; }
+.uf-landing__hero h1 { font-size:clamp(42px,7vw,90px); line-height:1.06; letter-spacing:-2px; margin:24px 0; }
+.uf-landing__hero h1 span { color:#d4af37; }
+.uf-landing__hero-content > p:not(.uf-landing__eyebrow) { color:#e0d9cd; line-height:1.7; max-width:510px; }
+.uf-landing__actions { display:flex; flex-wrap:wrap; gap:14px; margin-top:32px; }
+.uf-landing__button { display:inline-block; padding:15px 24px; border-radius:5px; background:#d4af37; color:#111; text-decoration:none; font-weight:700; }
+.uf-landing__button--outline { background:rgba(0,0,0,.32); color:#d4af37; border:1px solid #d4af37; }
+.uf-landing__section { padding:85px clamp(20px,6vw,100px); text-align:center; }
+.uf-landing__section h2 { font-size:clamp(28px,4vw,46px); margin:15px 0; }
+.uf-landing__section p:not(.uf-landing__eyebrow) { color:#c9c3b7; line-height:1.7; }
+.uf-landing__services { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; margin-top:38px; text-align:left; }
+.uf-landing__service { background:#1b1917; border:1px solid #51432a; border-radius:12px; overflow:hidden; }
+.uf-landing__service img { display:block; width:100%; height:180px; object-fit:cover; }
+.uf-landing__service-info { padding:20px; }
+.uf-landing__service-info h3 { margin:0 0 10px; color:#f5f1e8; font-size:19px; }
+.uf-landing__service-info p { margin:0; font-size:14px; }
+.uf-landing__section--alt { background:#1b1b1b; }
+.uf-landing__section .uf-landing__button { margin-top:20px; }
+.uf-landing__footer { text-align:center; color:#a9a293; padding:25px; border-top:1px solid #30291b; font-size:13px; }
+.uf-landing__footer img { display:block; margin:0 auto; width:150px; height:82px; object-fit:contain; }
+
+/* Contacto: tarjetas informativas, sin enlaces hasta contar con datos reales */
+.uf-landing__contact-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; max-width:1050px; margin:38px auto 0; }
+.uf-landing__contact-card { border:1px solid #54462b; background:#23201b; border-radius:12px; padding:25px 15px; }
+.uf-landing__contact-icon { display:flex; align-items:center; justify-content:center; width:54px; height:54px; border:1px solid #65532e; border-radius:50%; color:#d4af37; margin:0 auto 14px; font-size:27px; }
+.uf-landing__contact-icon--whatsapp { color:#25d366; }
+.uf-landing__contact-icon--instagram { color:#e879a2; }
+.uf-landing__contact-icon--telegram { color:#2aabee; }
+.uf-landing__contact-icon--tiktok { color:#f5f1e8; }
+.uf-landing__contact-icon--telefono, .uf-landing__contact-icon--ubicacion { color:#d4af37; }
+.uf-landing__contact-card h3 { margin:0 0 7px; color:#f5f1e8; font-size:18px; }
+.uf-landing__contact-card p { margin:0 0 13px; font-size:13px; }
+.uf-landing__contact-pending { display:inline-block; color:#d4af37; border:1px solid #65532e; border-radius:100px; padding:6px 11px; font-size:12px; }
+.uf-landing__contact-booking { margin:45px auto 0; padding-top:28px; border-top:1px solid #54462b; max-width:780px; }
+.uf-landing__contact-booking h3 { font-size:24px; margin:0 0 10px; }
+
+@media (max-width:900px) {
+  .uf-landing__services { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .uf-landing__hero-photo { width:75%; }
+  .uf-landing__contact-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:600px) {
+  .uf-landing__nav { flex-direction:column; gap:8px; padding:10px 16px 18px; }
+  .uf-landing__brand img { width:150px; height:72px; }
+  .uf-landing__nav nav { justify-content:center; gap:12px; }
+  .uf-landing__nav nav a { font-size:13px; }
+  .uf-landing__nav nav .uf-landing__login { padding:8px 12px; }
+  .uf-landing__hero { min-height:65vh; padding:65px 20px; }
+  .uf-landing__hero-photo { width:100%; opacity:.52; }
+  .uf-landing__hero::before { background:linear-gradient(90deg,rgba(16,16,16,.94),rgba(16,16,16,.66)); }
+  .uf-landing__hero h1 { letter-spacing:-1px; }
+  .uf-landing__section { padding:60px 20px; }
+  .uf-landing__services { grid-template-columns:1fr; }
+  .uf-landing__contact-grid { grid-template-columns:1fr; }
+  .uf-landing__contact-card { padding:22px 15px; }
+}

@@ -91,7 +91,7 @@ const generarFranja = (
 
     for (
         let minuto = inicio;
-        minuto <= fin;
+        minuto < fin;
         minuto += intervalo
     ) {
         horarios.push(
