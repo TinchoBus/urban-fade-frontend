@@ -1,0 +1,56 @@
+  background: #0d0d0d;
+  color: #a9a293;
+  border-top: 1px solid #51432a;
+}
+.uf-landing__footer-main,
+.uf-landing__footer-bottom {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.uf-landing__footer-identity { display: flex; align-items: center; gap: 15px; }
+.uf-landing__footer .uf-landing__footer-identity img {
+  display: block;
+  width: 72px;
+  height: 62px;
+  margin: 0;
+  object-fit: contain;
+}
+.uf-landing__footer-identity div,
+.uf-landing__footer-credit { display: flex; flex-direction: column; gap: 5px; }
+.uf-landing__footer-identity strong,
+.uf-landing__footer-credit strong {
+  color: #d4af37;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+.uf-landing__footer-identity span,
+.uf-landing__footer-credit span { font-size: 12px; color: #a9a293; }
+.uf-landing__footer-links { display: flex; gap: 22px; flex-wrap: wrap; }
+.uf-landing__footer-links a {
+  color: #a9a293;
+  text-decoration: none;
+  font-size: 13px;
+}
+.uf-landing__footer-links a:hover { color: #d4af37; }
+.uf-landing__footer .uf-landing__footer-bottom {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid #30291b;
+  font-size: 11px;
+  color: #827a6d;
+}
+.uf-landing__footer-credit { text-align: right; }
+@media (max-width: 600px) {
+  .uf-landing__brand-seal { padding: 55px 12px 48px; }
+  .uf-landing__brand-seal-name { font-size: 11vw; margin: 24px auto 16px; }
+  .uf-landing__brand-seal-eyebrow,
+  .uf-landing__brand-seal-tagline { font-size: 10px; letter-spacing: 2px; }
+  .uf-landing__footer-main,
+  .uf-landing__footer-bottom { align-items: flex-start; }
+  .uf-landing__footer-credit { text-align: left; }
+}

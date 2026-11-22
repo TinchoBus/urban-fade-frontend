@@ -1,133 +1,102 @@
+
+import React from 'react';
+import axiomLogo from './imagenes/axiom-logo.png';
+
 function Footer() {
+  return (
+    <footer style={footerStyle}>
 
-    return (
+      <p style={copyrightStyle}>
+        © 2026 Urban Fade · Todos los derechos reservados
+      </p>
 
-        <footer style={footerStyle}>
+      <div style={firmaContenedorStyle}>
+        <div style={firmaStyle}>
 
-            <div style={contenidoStyle}>
+          <img
+            src={axiomLogo}
+            alt="Isotipo AXIOM LABS STUDIOS"
+            style={logoStyle}
+          />
 
-                {/* LOGO DEL DESARROLLADOR */}
+          <div style={identidadStyle}>
+            <p style={empresaStyle}>
+              AXIOM LABS STUDIOS
+            </p>
 
-                <div style={logoStyle}>
-                    MB
-                </div>
+            <p style={textoStyle}>
+              Diseño y desarrollo de software
+            </p>
+          </div>
 
-                {/* IDENTIDAD */}
+        </div>
+      </div>
 
-                <div>
-
-                    <p style={empresaStyle}>
-                        MB Solutions Tech
-                    </p>
-
-                    <p style={textoStyle}>
-                        Diseño y desarrollo de software
-                    </p>
-
-                    <p style={copyrightStyle}>
-                        © 2026 - Todos los derechos reservados
-                    </p>
-
-                </div>
-
-            </div>
-
-        </footer>
-
-    );
+    </footer>
+  );
 }
 
 const footerStyle = {
-
-    marginTop: '50px',
-
-    padding: '25px 0 10px 0',
-
-    borderTop: '1px solid #d4af37',
-
-    backgroundColor: 'transparent',
-
-    width: '100%'
-
-};
-
-const contenidoStyle = {
-
-    display: 'flex',
-
-    alignItems: 'center',
-
-    justifyContent: 'center',
-
-    gap: '15px',
-
-    flexWrap: 'wrap',
-
-    textAlign: 'left'
-
-};
-
-const logoStyle = {
-
-    width: '44px',
-
-    height: '44px',
-
-    borderRadius: '50%',
-
-    border: '1px solid #d4af37',
-
-    color: '#d4af37',
-
-    display: 'flex',
-
-    alignItems: 'center',
-
-    justifyContent: 'center',
-
-    fontWeight: 'bold',
-
-    fontSize: '15px',
-
-    letterSpacing: '1px',
-
-    boxShadow:
-        '0 0 10px rgba(212, 175, 55, 0.15)'
-
-};
-
-const empresaStyle = {
-
-    color: '#d4af37',
-
-    fontWeight: 'bold',
-
-    margin: 0,
-
-    fontSize: '14px',
-
-    letterSpacing: '1px'
-
-};
-
-const textoStyle = {
-
-    color: '#aaa',
-
-    margin: '4px 0 0 0',
-
-    fontSize: '12px'
-
+  width: '100%',
+  boxSizing: 'border-box',
+  marginTop: '50px',
+  padding: '25px 20px 20px',
+  backgroundColor: '#101010',
+  borderTop: '1px solid rgba(212, 175, 55, 0.25)',
+  textAlign: 'center'
 };
 
 const copyrightStyle = {
+  color: '#999',
+  fontSize: '12px',
+  margin: '0 0 20px'
+};
 
-    color: '#666',
+const firmaContenedorStyle = {
+  width: '100%',
+  boxSizing: 'border-box',
+  borderTop: '1px solid rgba(212, 175, 55, 0.25)',
+  paddingTop: '18px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center'
+};
 
-    margin: '3px 0 0 0',
+const firmaStyle = {
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexWrap: 'wrap',
+  gap: '12px',
+  maxWidth: '100%'
+};
 
-    fontSize: '11px'
+const logoStyle = {
+  width: '54px',
+  height: '54px',
+  objectFit: 'contain',
+  flexShrink: 0,
+  display: 'block'
+};
 
+const identidadStyle = {
+  textAlign: 'left'
+};
+
+const empresaStyle = {
+  color: '#d4af37',
+  fontSize: '13px',
+  fontWeight: 'bold',
+  letterSpacing: '1.5px',
+  margin: 0
+};
+
+const textoStyle = {
+  color: '#888',
+  fontSize: '11px',
+  margin: '4px 0 0'
 };
 
 export default Footer;
+
